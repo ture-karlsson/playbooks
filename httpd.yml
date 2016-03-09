@@ -3,8 +3,8 @@
   remote_user: root
 
   tasks:
-    - name: install the latest version of Apache
-      yum: name=httpd state=present
+#    - name: install the latest version of Apache
+#      yum: name=httpd state=present
 
     - name: remove the Apache package
       yum: name=httpd state=absent
