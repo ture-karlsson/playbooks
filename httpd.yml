@@ -3,9 +3,6 @@
   remote_user: root
 
   tasks:
-    - name: ensure that the latest version of httpd is installed
-      yum: name=httpd state=latest
-
     - name: ensure that httpd is running and enabled
       service: name=httpd state=started enabled=yes
 
