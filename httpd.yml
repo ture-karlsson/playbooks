@@ -3,11 +3,17 @@
   remote_user: root
 
   tasks:
-    - name: Ensure HTTPD is started and enabled
-      service: name=httpd state=started enabled=yes
+    - name: install the latest version of Apache
+      yum: name=httpd state=latest
 
-    - name: Copy index.html template
-      template: src=templates/index.html.j2 dest=/var/www/html/index.html
+    - name: remove the Apache package
+      yum: name=httpd state=absent
 
-    - name: Open port 80/tcp in firewalld
-      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
+#    - name: ensure httpd is started and enabled
+#      service: name=httpd state=started enabled=yes
+
+#    - name: copy index.html template
+#      template: src=templates/index.html.j2 dest=/var/www/html/index.html
+
+#    - name: open port 80/tcp in firewalld
+#      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
