@@ -4,7 +4,7 @@
 
   tasks:
     - name: install the latest version of Apache
-      yum: name=httpd state=latest
+      yum: name=httpd state=present
 
     - name: remove the Apache package
       yum: name=httpd state=absent
