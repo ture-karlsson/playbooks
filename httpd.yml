@@ -1,16 +1,29 @@
 ---
 - hosts: webservers
-  remote_user: root
+  hosts: all
 
   tasks:
+
+    - name: whoami
+      command: "whoami"
+      register: whoami
+      changed_when: false
+
+    - name: whomi output
+      debug:
+        msg: "{{ whoami.stdout }}"
+ 
     - name: install the latest version of httpd
-      yum: name=httpd state=latest
+      yum:
+        name: httpd 
+        state: latest
 
-    - name: ensure httpd is started and enabled
-      service: name=httpd state=started enabled=yes
+#    - name: ensure httpd is started and enabled
+#      service: name=httpd state=started enabled=yes
 
-    - name: copy index.html template
-      template: src=templates/index.html.j2 dest=/var/www/html/index.html
+#    - name: copy index.html template
+#      template: src=templates/index.html.j2 dest=/var/www/html/index.html
 
-    - name: open port 80/tcp in firewalld
-      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
+#    - name: open port 80/tcp in firewalld
+#      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
+
