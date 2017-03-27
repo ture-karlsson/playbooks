@@ -24,6 +24,6 @@
     - name: copy index.html template
       template: src=templates/index.html.j2 dest=/var/www/html/index.html
 
-#    - name: open port 80/tcp in firewalld
-#      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
+    - name: open port 80/tcp in firewalld
+      firewalld: port=80/tcp permanent=true state=enabled immediate=yes
 
