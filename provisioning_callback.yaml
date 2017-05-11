@@ -1,0 +1,22 @@
+---
+# This playbook is used by a job in Ansible Tower which allows provisioning callback.
+# This means that after a host have been provsioned (in this case by Satellite 6) it will make an API call to Ansible Tower to tell Tower to run this playbook against that host.
+
+- hosts: all
+
+  tasks:
+  
+  - name: install basic packages
+    yum:
+      name: "{{ item }}"
+      state: installed
+    with_items:
+    - katello-agent
+    - vim
+    - bind-utils
+    
+  - name: ensure that goferd is started and enabled
+    service:
+      name: goferd
+      state: running
+      enabled: yes
