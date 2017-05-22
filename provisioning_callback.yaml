@@ -2,9 +2,7 @@
 # This playbook is used by a job in Ansible Tower which allows provisioning callback.
 # This means that after a host have been provsioned (in this case by Satellite 6) it will make an API call to Ansible Tower to tell Tower to run this playbook against that host.
 
-- hosts: all
-
-  tasks:
+- tasks:
   
   - name: install basic packages
     yum:
