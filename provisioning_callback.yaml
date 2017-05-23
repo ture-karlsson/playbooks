@@ -7,9 +7,7 @@
   tasks:
   
   - name: wait for server to restart
-    local_action:
-      module: wait_for
-        host: {{ ansible_nodename }}
+    wait_for:
         port: 22
         delay: 5
         timeout: 100
