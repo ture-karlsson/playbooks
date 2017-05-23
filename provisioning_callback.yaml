@@ -6,17 +6,7 @@
   gather_facts: false
   tasks:
 
-  - name: debug
-    debug:
-      msg: "{{ inventory_hostname }}"
-
-#  - name: wait for server to restart
-#    wait_for:
-#        port: 22
-#        delay: 5
-#        timeout: 100
-
-  - name: wait for server to restart
+  - name: wait for server to start
     local_action: wait_for host={{ inventory_hostname }} port=22 delay=5 timeout=60
     become: false
 
