@@ -9,7 +9,7 @@
   - name: wait for server to restart
     local_action:
       module: wait_for
-        host: {{ ansible_hostname }}
+        host: {{ foreman.name }}
         port: 22
         delay: 5
         timeout: 100
