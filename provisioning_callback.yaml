@@ -9,7 +9,7 @@
   - name: wait for server to restart
     local_action:
       module: wait_for
-        host: {{ inventory_hostname }}
+        host: {{ ansible_hostname }}
         port: 22
         delay: 5
         timeout: 100
