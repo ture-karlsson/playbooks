@@ -1,0 +1,14 @@
+---
+# tasks file for katello-agent
+
+- name: install katello-agent
+  yum:
+    name: katello-agent
+    state: latest
+
+- name: ensure that goferd is started and enabled
+  service:
+    name: goferd
+    state: running
+    enabled: yes
+

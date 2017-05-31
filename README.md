@@ -1,2 +1,2 @@
 # playbooks
-This is some playbooks to test Ansible with git
+These playbooks are used to demonstrate integration with Ansible Tower and Satellite 6 

@@ -1,0 +1,12 @@
+---
+# tasks file for packages
+
+- name: install packages
+  yum:
+    name: "{{ item }}"
+    state: installed
+  with_items:
+  - vim
+  - bind-utils
+  - tree
+
