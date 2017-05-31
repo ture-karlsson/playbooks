@@ -6,5 +6,5 @@
   roles:
   - katello-agent
   - packages
-  - openscap
+#  - openscap
 
