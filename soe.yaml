@@ -4,8 +4,8 @@
   hosts: all
   become: yes
   roles:
+  - rhsm
   - katello-agent
   - packages
-  - rhsm
 #  - openscap
 
