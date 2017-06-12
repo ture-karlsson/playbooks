@@ -1,0 +1,16 @@
+---
+# tasks file for rhsm
+
+- name: install katello-ca-consumer
+  yum:
+    name: https://{{ capsule }}/pub/katello-ca-consumer-latest.noarch.rpm
+    state: installed
+
+- name: register with subscription-manager
+  redhat_subscription:
+    server_hostname: "{{ capsule }}" 
+    activationkey: "{{ activation_key }}"
+    org_id: "{{ org_id }}"
+    state: present
+   
+

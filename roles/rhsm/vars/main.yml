@@ -1,0 +1,6 @@
+---
+# vars file for rhsm
+
+capsule: sat6.example.com
+activation_key: "{{ foreman_params.kt_activation_keys }}"
+org_id: "{{ foreman.organization_name }}"
