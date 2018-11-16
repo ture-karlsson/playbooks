@@ -1,0 +1,9 @@
+---
+
+- hosts: all
+
+  tasks:
+
+  - name: print secret not_so_secret
+    debug:
+      msg: "{{ not_so_secret }}"
